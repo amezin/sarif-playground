@@ -1,0 +1,22 @@
+{
+  "name": "sarif-playground",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Test",
+  "homepage": "https://github.com/amezin/sarif-playground#readme",
+  "bugs": {
+    "url": "https://github.com/amezin/sarif-playground/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amezin/sarif-playground.git"
+  },
+  "license": "CC0-1.0",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.1.0"
+  }
+}
