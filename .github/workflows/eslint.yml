@@ -23,7 +23,7 @@ jobs:
       - name: Lint
         run: >-
           npm run-script lint --
-          --format @microsoft/eslint-formatter-sarif
+          --format ./.github/sarif.cjs
           --output-file eslint-results.sarif
         continue-on-error: true
 
