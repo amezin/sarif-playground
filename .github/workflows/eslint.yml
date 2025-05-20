@@ -10,12 +10,9 @@ jobs:
   eslint:
     name: Run eslint scanning
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install
         run: npm install
@@ -23,12 +20,12 @@ jobs:
       - name: Lint
         run: >-
           npm run-script lint --
-          --format @microsoft/eslint-formatter-sarif
+          --format ./.github/sarif.cjs
           --output-file eslint-results.sarif
         continue-on-error: true
 
       - name: Report
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: eslint-results.sarif
           wait-for-processing: true
